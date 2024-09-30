@@ -31,9 +31,9 @@ void release(node *n)
     if (n)
     {
         if(n->no)
-            free(n->no);
+            release(n->no);
         if(n->yes)
-            free(n->yes);
+            release(n->yes);
         if(n->question)
             free(n->question);
         free(n);
@@ -83,6 +83,7 @@ int main()
 
                 printf("Give me a question that is TRUE for %s but not for %s ", suspect, current->question);
                 fgets(question, 80, stdin);
+                free(current->question);
                 current->question = strdup(question);
 
                 break;
