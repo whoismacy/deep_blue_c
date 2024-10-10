@@ -15,8 +15,43 @@ int comparator_function(const void *sx, const void *sy)
     int a = *(int *)sx;
     int b = *(int *)sy;
 
-    return b - a;
+    return a - b;
 }
+
+int compare_scores_desc(const void *score_a, const void *score_b)
+{
+    int a = *(int *)score_a;
+    int b = *(int *)score_b;
+
+    return b - a ;
+}
+
+typedef struct
+{
+    int width;
+    int height;
+}rectangle;
+
+int compare_areas(const void *a, const void *b)
+{
+    rectangle *rect_a = (rectangle *)a;
+    rectangle *rect_b = (rectangle *)b;
+
+    int area_a = (rect_a->width * rect_a->height);
+    int area_b = (rect_a->width * rect_a->height);
+
+    return area_a - area_b;
+}
+
+int comapare_names(const void *a, const void *b)
+{
+    char **a = (char **)a;
+    char **b = (char **)b;
+
+    return strcmp(*a, *b);
+
+}
+
 
 int main() 
 {
