@@ -19,7 +19,5 @@ int main()
 
     system(cmd);
     
-    printf("The values of cmd are %s\n", cmd);
-
     return 0;
 }
