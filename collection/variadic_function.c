@@ -33,7 +33,7 @@ double total(int args, ...)
 
 int main()
 {
-    double total_amount = total(8,7.6,3.2,5.1,6.4,3.1,7.2,4.2,1.1);
+    double total_amount = total(8,7.6,3.2,5.1,6.4,3.1,7.2,4.2,1.1);//The first value is the number of arguments that precede it.
 
     printf("The total amount is %f", total_amount);
 
