@@ -19,33 +19,13 @@ int catch_signal(int sig, void(*handler)(int))
     exit(1);
 }
 
-void handle_interrupt(int sig)
-{
-    if(sig == 2)
-    {
-        printf("\nEncountered a SIGINT signal, Goodbye.\n");
-    }
-    else if(sig == SIGTSTP)
-    {
-        printf("\nEncountered a SIGTSTP signal(CTRL+Z), goodbye.\n");
-    }
-    else if(sig == 9)
-    {
-        printf("\nEncountered a SIGKILL signal, goodbye......\n");
-    }
-    else if(sig == 15)
-    {
-        printf("\nEncountered a SIGTERM signal, goodbye...........\n");
-    }
-    else
-    {
-        printf("\nUnknown error\n");
-    }
+void handle_interrupt(int sig){
+    printf("\nEncountered SIGTSP error (CTRL+Z)\n");
 }
 
 int main()
 {
-    if(catch_signal(SIGINT, handle_interrupt) == -1)
+    if(catch_signal(SIGTSTP, handle_interrupt) == -1)
     {
         fprintf(stderr, "Can't map the handler");
         exit(2);
