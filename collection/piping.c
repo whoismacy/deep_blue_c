@@ -48,7 +48,7 @@ int main(int argc, char **argv)
     dup2(fd[0], 0);
     close(fd[1]);
     char line[255];
-    while(fgets(line, 2555, stdin))
+    while(fgets(line, 255, stdin))
     {
         if(line[0] == '\t')
             open_url(line + 1);
